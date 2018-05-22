@@ -42,6 +42,14 @@ public class Datos {
         Datos.personas = personas;
     }
 
+    public static void eliminarPersona(Persona p){
+        databaseReference.child(db).child(p.getId()).removeValue();
+    }
+
+    public static void modificarPersona(Persona p){
+        databaseReference.child(db).child(p.getId()).setValue(p);
+    }
+
 
 
 }
